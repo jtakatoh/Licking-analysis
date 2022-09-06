@@ -1,7 +1,8 @@
 # Licking-analysis
  ### How to track the tongue and jaw
- 1. Open the licking_jaw_config.json ()
- 1. Specify the video file to be tracked 
+ 1. Open the licking_jaw_config.json (/home/wanglab/Programs/Hourglass/build/licking_jaw_config.json)
+ 2. Specify the video file to be tracked 
+    "videos": "/media/wanglab/jun/Licking/Phox2b_videos/Phox2b#8_IRt_TeLC/Phox2b_#8_teLC_20220808_1_350fps1.mp4",
  
  
  
