@@ -4,7 +4,7 @@
  2. Specify the video file to be tracked.  
     "videos": "/media/wanglab/jun/Licking/Phox2b_videos/Phox2b#8_IRt_TeLC/Phox2b_#8_teLC_20220808_1_350fps1.mp4",   
  3. Open Terminal
- 4. change directory: /home/wanglab/Programs/Hourglass/build/  
+ 4. Change directory: /home/wanglab/Programs/Hourglass/build/  
  5. Run: ./Hourglass -d licking_jaw_config.json --train=false
     Check -h help to see options
  6. Two .5 and one labeled video will be generated. 
