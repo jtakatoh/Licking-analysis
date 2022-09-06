@@ -2,13 +2,12 @@
  ### How to track the tongue and jaw
  1. Open the licking_jaw_config.json (/home/wanglab/Programs/Hourglass/build/licking_jaw_config.json)
  2. Specify the video file to be tracked.  
-    "videos": "/media/wanglab/jun/Licking/Phox2b_videos/Phox2b#8_IRt_TeLC/Phox2b_#8_teLC_20220808_1_350fps1.mp4",
- 
- 
- 
- 
- 
- 
+    "videos": "/media/wanglab/jun/Licking/Phox2b_videos/Phox2b#8_IRt_TeLC/Phox2b_#8_teLC_20220808_1_350fps1.mp4",   
+ 3. Open Terminal
+ 4. change directory: /home/wanglab/Programs/Hourglass/build/  
+ 5. Run: ./Hourglass -d licking_jaw_config.json --train=false
+    Check -h help to see options
+ 6. Two .5 and one labeled video will be generated. 
  
  ### Tongue_Jaw_correlation.m  
   Plot tongue area and jaw heigts.  
