@@ -1,0 +1,86 @@
+{
+    "name": "example-dataset",
+    "folder_path": "/home/wanglab/Pictures/Licking_Data",
+    "experiments": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13"
+    ],
+    "images": {
+        "views": [
+            {
+                "name": "sideview",
+                "prefix": ["original_side"],
+                "label_prefix": ["mask_side"]
+            },
+            {
+                "name": "bottomview",
+                "prefix": ["original_bottom"],
+                "label_prefix": ["mask_bottom"]
+            }
+        ],
+        "name_prefix": "scene",
+        "filetypes": [".png"],
+        "resolution": [256,256]
+    },
+    "labels": {
+        "labels": [
+            {
+                "type": "mask",
+                "name": "tongue",
+                "name_prefix": "scene",
+                "filetypes": [".png"]
+            },
+            {
+                "type": "pixel",
+                "name": "jaw",
+                "name_prefix": "scene"
+            }
+        ],
+        "resolution": [64,64]
+    },
+    "hourglass": {
+        "stacks": 4,
+        "channels": 64,
+        "input-dimensions": 1,
+        "output-dimensions": 2,
+        "output-type": ["mask","pixel"]
+    },
+    "training": {
+        "epochs": 10,
+        "batch-size": 16,
+        "save-name": "hourglass_weights_jaw2.pt",
+        "load-weights": {
+            "load": false,
+            "path": "hourglass_weights_jaw2.pt"
+        },
+        "learning-rate": 1e-5,
+        "image-augmentation": true,
+        "keypoint-radius": 101,
+        "intermediate-supervision": true
+    },
+    "prediction": {
+        "batch-size": 32,
+        "load-weights": {
+            "load": true,
+            "path": "hourglass_weights_jaw2.pt"
+        },
+        "resolution": [256,256],
+        "videos": "/media/wanglab/jun/Licking/Phox2b_videos/Phox2b#8_IRt_TeLC/Phox2b_#8_teLC_20220808_1_350fps1.mp4",
+        "start_frame": 1,
+        "end_fr1ame": 45000,
+        "save_hdf5": true,
+        "save_images": false,
+        "save_video": true
+    }
+}
