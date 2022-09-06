@@ -1,4 +1,5 @@
 # Licking-analysis
+ ### How to track the tongue and jaw
   ### Tongue_Jaw_correlation.m  
   Plot tongue area and jaw heigts.  
   Calculate correlation coefficient between tongue and jaw movements.  
