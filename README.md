@@ -7,8 +7,13 @@ Check te number of total frames
 
 VLC can output frames but it drops frames. ffmpeg is better.  
 Change directory to were you wwant to output frame images and run this  
-**ffmpeg -r 1 -i /home/wanglab/Desktop/build-CameraViewer-Qt_Static-Debug/Phox2b_#14_teLC_Choco_20220908_3_350fps0.mp4 -r 1 scene%04d.png**
+**ffmpeg -r 1 -i /home/wanglab/Desktop/build-CameraViewer-Qt_Static-Debug/Phox2b_#14_teLC_Choco_20220908_3_350fps0.mp4 -r 1 scene%04d.png**  
 
+Create a movie from frames  
+**ffmpeg -r 35 -f image2 -s 640X480 -start_number 51300 -i scene%04d.png -vframes 4000 -vcodec libx264 -crf 10 -pix_fmt yuv420p test.mp4**  
+See: https://hamelot.io/visualization/using-ffmpeg-to-convert-a-set-of-images-into-a-video/  
+
+ 
  ### How to track the tongue and jaw
  1. Open the licking_jaw_config.json (/home/wanglab/Programs/Hourglass/build/licking_jaw_config.json)
  2. Specify the video file to be tracked.  
