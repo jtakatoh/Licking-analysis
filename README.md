@@ -1,4 +1,13 @@
 # Licking-analysis
+
+## Making masks
+Output frames from vides  
+Check te number of total frames
+ffprobe -v error -select_streams v:0 -count_packets -show_entries stream=nb_read_packets -of csv=p=0 /home/wanglab/Desktop/build-CameraViewer-Qt_Static-Debug/Phox2b_#14_teLC_Choco_20220908_1_350fps0.mp4
+VLC can output frames but it drops frames. ffmpeg is better.  
+Change directory to were you wwant to output frame images and run this 
+ffmpeg -r 1 -i /home/wanglab/Desktop/build-CameraViewer-Qt_Static-Debug/Phox2b_#14_teLC_Choco_20220908_3_350fps0.mp4 -r 1 scene%04d.png
+
  ### How to track the tongue and jaw
  1. Open the licking_jaw_config.json (/home/wanglab/Programs/Hourglass/build/licking_jaw_config.json)
  2. Specify the video file to be tracked.  
@@ -8,12 +17,7 @@
  5. Run: ./Hourglass -d licking_jaw_config.json --train=false
     Check -h help to see options
  6. Two .5 and one labeled video will be generated. 
- 
- ### Move_files
- This script moves files from the original video frame folder, which contains all the frames, to the desired folder using file names.   
- Once side frame masks are created, bottom frames with names that correspond to the used side frames can be transferred from the original bottom 
- frame folder to the target folder.
- 
+  
  ### Tongue_Jaw_correlation.m  
   Plot tongue area and jaw heigts.  
   Calculate correlation coefficient between tongue and jaw movements.  
