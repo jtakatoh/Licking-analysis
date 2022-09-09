@@ -9,6 +9,11 @@
     Check -h help to see options
  6. Two .5 and one labeled video will be generated. 
  
+ ### Move_files
+ This script moves files from the original video frame folder, which contains all the frames, to the desired folder using file names.   
+ Once side frame masks are created, bottom frames with names that correspond to the used side frames can be transferred from the original bottom 
+ frame folder to the target folder.
+ 
  ### Tongue_Jaw_correlation.m  
   Plot tongue area and jaw heigts.  
   Calculate correlation coefficient between tongue and jaw movements.  
