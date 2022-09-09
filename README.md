@@ -2,7 +2,7 @@
 
 ## Making masks
 Output frames from vides  
-Check te number of total frames  
+Check the number of total frames  
 **ffprobe -v error -select_streams v:0 -count_packets -show_entries stream=nb_read_packets -of csv=p=0 /home/wanglab/Desktop/build-CameraViewer-Qt_Static-Debug/Phox2b_#14_teLC_Choco_20220908_1_350fps0.mp4**  
 
 VLC can output frames but it drops frames. ffmpeg is better.  
