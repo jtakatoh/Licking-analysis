@@ -19,7 +19,9 @@ or
 **ffmpeg -r 35 -f image2 -s 640X480 -i scene%04d.bmp -vcodec libx264 -crf 10 -pix_fmt yuv420p test.mp4**  
 See: https://hamelot.io/visualization/using-ffmpeg-to-convert-a-set-of-images-into-a-video/  
 
- 
+Slowing down an exsiting video  
+**ffmpeg -y -i /home/wanglab/Programs/Hourglass/build/Phox2B#8_20220720_1_1_labeled.mp4 -r 35 -s 640x480 -c:v libx264 -b:v 3M -strict -2 -movflags faststart /home/wanglab/Programs/Hourglass/build/Phox2B#8_20220720_1_1_labeled_slow.mp4**   
+
  ## How to track the tongue and jaw
  1. Open the licking_jaw_config.json (/home/wanglab/Programs/Hourglass/build/licking_jaw_config.json)
  2. Specify the video file to be tracked.  
