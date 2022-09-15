@@ -6,8 +6,11 @@ Check the number of total frames
 **ffprobe -v error -select_streams v:0 -count_packets -show_entries stream=nb_read_packets -of csv=p=0 /home/wanglab/Desktop/build-CameraViewer-Qt_Static-Debug/Phox2b_#14_teLC_Choco_20220908_1_350fps0.mp4**  
 
 VLC can output frames but it drops frames. ffmpeg is better.  
-Change directory to were you wwant to output frame images and run this  
+Change directory to were you want to output frame images and run this  
 **ffmpeg -r 1 -i /home/wanglab/Desktop/build-CameraViewer-Qt_Static-Debug/Phox2b_#14_teLC_Choco_20220908_3_350fps0.mp4 -r 1 scene%04d.png**  
+
+Export desired frames   
+**ffmpeg -r 1 -i /home/wanglab/Programs/Hourglass/build/Phox2b_#14_teLC_Choco_20220908_3_350fps1_labeled.mp4 -vf trim=start_frame=40000:end_frame=45000 -r 1 scene%04d.png**
 
 Create a movie from frames  
 **ffmpeg -r 35 -f image2 -s 640X480 -start_number 51300 -i scene%04d.png -vframes 4000 -vcodec libx264 -crf 10 -pix_fmt yuv420p test.mp4**  
