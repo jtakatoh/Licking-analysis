@@ -2,7 +2,7 @@
 
 ## install ffmpeg
 https://cyber-tenchou.com/tips/20200904/  
-https://eng-entrance.com/linux-vi-save
+https://eng-entrance.com/linux-vi-save  
 vi .zshrc  
 Write: export PATH=/Applications:$PATH  
 To save and exit: :wq 
