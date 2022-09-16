@@ -1,5 +1,8 @@
 # Licking-analysis
 
+## install ffmpeg
+https://cyber-tenchou.com/tips/20200904/
+
 ## Making masks
 
 ### Check the number of total frames  
