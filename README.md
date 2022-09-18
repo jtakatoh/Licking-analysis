@@ -18,7 +18,11 @@ Change directory to were you want to output frame images and run this (bmp is be
 ffmpeg -r 1 -i /home/wanglab/Desktop/build-CameraViewer-Qt_Static-Debug/Phox2b_#14_teLC_Choco_20220908_3_350fps0.mp4 -r 1 scene%04d.bmp  
 
 ### Export desired frames   
-ffmpeg -r 1 -i /home/wanglab/Programs/Hourglass/build/Phox2b_#14_teLC_Choco_20220908_3_350fps1_labeled.mp4 -vf trim=start_frame=40000:end_frame=45000 -r 1 scene%04d.bmp
+Frame by frame  
+ffmpeg -r 1 -i /home/wanglab/Programs/Hourglass/build/Phox2b_#14_teLC_Choco_20220908_3_350fps1_labeled.mp4 -vf trim=start_frame=40000:end_frame=45000 -r 1 scene%04d.bmp  
+
+Frame by frame + increase brightness  
+fmpeg -r 1 -i /home/wanglab/Programs/Hourglass/build/Phox2B#8_20220810_3_1_labeled.mp4 -vf eq=brightness=0.3:contrast=1.5 -r 1 scene%04d.png  
 
 ### Create a movie from frames  
 ffmpeg -r 35 -f image2 -s 640X480 -start_number 51300 -i scene%04d.bmp -vframes 4000 -vcodec libx264 -crf 10 -pix_fmt yuv420p test.mp4  
