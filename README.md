@@ -24,7 +24,7 @@ ffmpeg -r 1 -i /home/wanglab/Programs/Hourglass/build/Phox2b_#14_teLC_Choco_2022
 Frame by frame + increase brightness  
 fmpeg -r 1 -i /home/wanglab/Programs/Hourglass/build/Phox2B#8_20220810_3_1_labeled.mp4 -vf eq=brightness=0.3:contrast=1.5 -r 1 scene%04d.png  
 
-Every 2 frames
+Every 2 frames  
 ffmpeg -i /home/wanglab/Desktop/build-CameraViewer-Qt_Static-Debug/Phox2b_#14_teLC_Sprinkles_20220919_1_500fps1.mp4 -vf "select=not(mod(n\,2))" -vsync vfr scene%04d.png
 
 ### Create a movie from frames  
