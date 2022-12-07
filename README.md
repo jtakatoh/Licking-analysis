@@ -27,11 +27,18 @@ fmpeg -r 1 -i /home/wanglab/Programs/Hourglass/build/Phox2B#8_20220810_3_1_label
 Every 2 frames  
 ffmpeg -i /home/wanglab/Desktop/build-CameraViewer-Qt_Static-Debug/Phox2b_#14_teLC_Sprinkles_20220919_1_500fps1.mp4 -vf "select=not(mod(n\,2))" -vsync vfr scene%04d.png
 
+__bmp format produces a better image quality.__
+
 ### Create a movie from frames  
 ffmpeg -r 35 -f image2 -s 640X480 -start_number 51300 -i scene%04d.bmp -vframes 4000 -vcodec libx264 -crf 10 -pix_fmt yuv420p test.mp4  
 or  
 ffmpeg -r 35 -f image2 -s 640X480 -i scene%04d.bmp -vcodec libx264 -crf 10 -pix_fmt yuv420p test.mp4  
 See: https://hamelot.io/visualization/using-ffmpeg-to-convert-a-set-of-images-into-a-video/  
+
+-r is the framerate (fps)
+-crf is the quality, lower means better quality, 15-25 is usually good
+-s is the resolution
+-pix_fmt yuv420p specifies the pixel format, change this as needed
 
 ### Slowing down an exsiting video  
 ffmpeg -y -i /home/wanglab/Programs/Hourglass/build/Phox2B#8_20220720_1_1_labeled.mp4 -r 35 -s 640x480 -c:v libx264 -b:v 3M -strict -2 -movflags faststart /home/wanglab/Programs/Hourglass/build/Phox2B#8_20220720_1_1_labeled_slow.mp4   
