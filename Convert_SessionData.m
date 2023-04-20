@@ -40,9 +40,16 @@ function adjusted_SessionData = adjust_event_times(SessionData, adjusted_Session
         adjusted_SessionData.RawEvents.Trial{1,trial_idx}.States.(event_name) = ...
             SessionData.RawEvents.Trial{1,trial_idx}.States.(event_name) - cue_start;
     end
-    adjusted_SessionData.RawEvents.Trial{1,trial_idx}.Events.BNC1High = ...
-        SessionData.RawEvents.Trial{1,trial_idx}.Events.BNC1High - cue_start;
-    adjusted_SessionData.RawEvents.Trial{1,trial_idx}.Events.BNC1Low = ...
-        SessionData.RawEvents.Trial{1,trial_idx}.Events.BNC1Low - cue_start;
+    
+    if isfield(SessionData.RawEvents.Trial{1,trial_idx}.Events, 'BNC1High')
+        adjusted_SessionData.RawEvents.Trial{1,trial_idx}.Events.BNC1High = ...
+            SessionData.RawEvents.Trial{1,trial_idx}.Events.BNC1High - cue_start;
+    end
+    
+    if isfield(SessionData.RawEvents.Trial{1,trial_idx}.Events, 'BNC1Low')
+        adjusted_SessionData.RawEvents.Trial{1,trial_idx}.Events.BNC1Low = ...
+            SessionData.RawEvents.Trial{1,trial_idx}.Events.BNC1Low - cue_start;
+    end
 end
+
 
