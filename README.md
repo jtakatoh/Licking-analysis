@@ -75,3 +75,9 @@ adjusted_SessionData files. In the adjusted files Cue start is adjusted to 0. Th
 
 ## Plot_LickToGetReward_2023-04-19.ipynb & Plot_LickToGetReward_batch_2023-04-19.ipynb
 Plot data from LickToGetReward. Before running these codes, you need to process SessionData by Convert_SessionData.m.
+
+## extract_lick_parameters_from_LickToGetReward_Training_2023-05-13.ipynb
+Extract lick_parameters from LickToGetReward_Training
+This script extract licking parameters, including "mean_num_licksperbout", "mean_num_multi_licks", "mean_bout_duration", 
+"mean_frequency", "Avg. Licks in Dringking period ", "LickThreshold". 
+This script contains "Count_licks_in_Drinking.ipynb"
