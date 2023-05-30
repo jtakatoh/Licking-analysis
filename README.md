@@ -9,6 +9,8 @@ To save and exit: :wq
 
 ## Making masks
 
+## FFMPEG  
+
 ### Check the number of total frames  
 ffprobe -v error -select_streams v:0 -count_packets -show_entries stream=nb_read_packets -of csv=p=0 /home/wanglab/Desktop/build-CameraViewer-Qt_Static-Debug/Phox2b_#14_teLC_Choco_20220908_1_350fps0.mp4  
 
@@ -39,6 +41,15 @@ See: https://hamelot.io/visualization/using-ffmpeg-to-convert-a-set-of-images-in
 -crf is the quality, lower means better quality, 15-25 is usually good.  
 -s is the resolution.  
 -pix_fmt yuv420p specifies the pixel format, change this as needed.  
+
+# Concatenate videos
+make a text file 'video.txt'
+List the files to concatenate like this:
+file 'Phox2b_#19_teLC_20221205_1_350fps1.mp4'
+file 'Phox2b_#19_teLC_20221205_2_350fps1.mp4'
+
+Then run this command from the directory that contains video files and video.txt:
+ffmpeg -f concat -safe 0 -i video.txt -c copy output.mp4
 
 ### Slowing down an exsiting video  
 ffmpeg -y -i /home/wanglab/Programs/Hourglass/build/Phox2B#8_20220720_1_1_labeled.mp4 -r 35 -s 640x480 -c:v libx264 -b:v 3M -strict -2 -movflags faststart /home/wanglab/Programs/Hourglass/build/Phox2B#8_20220720_1_1_labeled_slow.mp4   
