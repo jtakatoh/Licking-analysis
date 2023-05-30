@@ -42,7 +42,7 @@ See: https://hamelot.io/visualization/using-ffmpeg-to-convert-a-set-of-images-in
 -s is the resolution.  
 -pix_fmt yuv420p specifies the pixel format, change this as needed.  
 
-# Concatenate videos
+### Concatenate videos
 make a text file 'video.txt'
 List the files to concatenate like this:
 file 'Phox2b_#19_teLC_20221205_1_350fps1.mp4'
