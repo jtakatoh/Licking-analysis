@@ -51,7 +51,9 @@ function [areas, Jaw_heights] = extract_h5()
 
         img(img<0.2) = 0; % remove low probability areas
 
-        img_array(j) = {img};
+        %img_array(j) = {img}; %This stores entire image array and uses
+        %lots of memory
         areas(frames(j),1) = sum(sum(img));
+        disp(['Processed frame: ', num2str(j)])
     end
 end
