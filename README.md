@@ -7,6 +7,7 @@ vi .zshrc
 Write: export PATH=/Applications:$PATH  
 To save and exit: :wq 
 
+# Viveo data handling  
 ## Making masks
 
 ## FFMPEG  
@@ -54,7 +55,7 @@ ffmpeg -f concat -safe 0 -i video.txt -c copy output.mp4
 ### Slowing down an exsiting video  
 ffmpeg -y -i /home/wanglab/Programs/Hourglass/build/Phox2B#8_20220720_1_1_labeled.mp4 -r 35 -s 640x480 -c:v libx264 -b:v 3M -strict -2 -movflags faststart /home/wanglab/Programs/Hourglass/build/Phox2B#8_20220720_1_1_labeled_slow.mp4   
 
- ## How to track the tongue and jaw
+ ## How to track the tongue and jaw using the Hourglass program  
  1. Open the licking_jaw_config.json (/home/wanglab/Programs/Hourglass/build/licking_jaw_config.json)
  2. Specify the video file to be tracked.  
     "videos": "/media/wanglab/jun/Licking/Phox2b_videos/Phox2b#8_IRt_TeLC/Phox2b_#8_teLC_20220808_1_350fps1.mp4",   
@@ -64,6 +65,12 @@ ffmpeg -y -i /home/wanglab/Programs/Hourglass/build/Phox2B#8_20220720_1_1_labele
     Check -h help to see options
  6. Two .5 and one labeled video will be generated. 
   
+# Video data analysis  
+1. extract the tongue area (areas) and jaw height (Jaw_heights) information using extract_h5.m. You can do this either running the extract_h5.m function in the NumberOfLicksPerBout.m or extract_h5_batch.m.  
+2. Check the tracking quality.  
+3. Run: [peaks,locs] = findpeaks(smoothdata(areas,'gaussian', 12),'MinPeakDistance',17.5, 'MinPeakHeight',500); to get "peaks"
+4. Save peaks.  
+5. Perform stattical analysis.      
 ## extract_h5.m 
 **_For video tracking data_**  
 Matlab function. Extract information from h5 files. 
